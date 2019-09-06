@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- /project1/src/mapper/mybatis-config.xml -->
+<!DOCTYPE configuration PUBLIC "-//mybatis.org/DTD config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<properties resource="mapper/mybatis.properties" />
+	<typeAliases>
+		<typeAlias type="model.Member" alias="Member" />
+ 		<typeAlias type="model.Board" alias="Board" />
+ 		<typeAlias type="model.PointBoard" alias="PointBoard" />
+ 		<typeAlias type="model.Career" alias="Career" />
+ 		<typeAlias type="model.Joinreq" alias="Joinreq" />
+ 		<typeAlias type="model.Pointreq" alias="Pointreq" />
+ 		<typeAlias type="model.MemPoint" alias="MemPoint" />
+ 		<typeAlias type="model.Comment" alias="Comment" />
+ 		<typeAlias type="model.InfoBoard" alias="InfoBoard" />
+	</typeAliases>
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${jdbc.driver}" />
+				<property name="url" value="${jdbc.url}" />
+				<property name="username" value="${jdbc.username}" />
+				<property name="password" value="${jdbc.password}" />
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<mapper resource="mapper/MemberMapper.xml" />
+		<mapper resource="mapper/CareerMapper.xml" />
+		<mapper resource="mapper/BoardMapper.xml" />
+		<mapper resource="mapper/PointBoardMapper.xml" />
+		<mapper resource="mapper/JoinreqMapper.xml" />
+ 		<mapper resource="mapper/MemPointMapper.xml" />
+ 		<mapper resource="mapper/PointreqMapper.xml" />
+ 		<mapper resource="mapper/CommentMapper.xml" />
+ 		<mapper resource="mapper/InfoBoardMapper.xml" />
+	</mappers>
+</configuration>

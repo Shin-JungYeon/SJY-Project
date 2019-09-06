@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- /project1/src/mapper/JoinreqMapper.xml -->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.JoinreqMapper">
+	<select id="select" parameterType="map" resultType="Joinreq">
+		select * from joinreq
+		<if test="no != null">
+			where no = #{no}
+		</if>
+		<if test="reqid != null">
+			where reqid = #{reqid}
+		</if>
+	</select>
+</mapper>

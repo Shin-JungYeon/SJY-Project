@@ -1,0 +1,28 @@
+/* WebContent/css/main.css */
+table {
+	width: 100%;
+	border-style: none;
+}
+th, td {
+	text-align: center;
+	font-family: "Karma", sans-serif;
+	border: 1px solid #000000;
+	padding: 8px;
+}
+th {
+	font-family: "Karma", sans-serif;
+	background-color: #c0c0c0;
+}
+td {
+	font-family: "Karma", sans-serif;
+	background-color: #ffffff;
+}
+caption {
+	font-family: "Karma", sans-serif;
+	color: #111111;
+	font-size: 20px;
+	background-color: #ffffff;
+}
+input[type=text], input[type=password], textarea {
+	width: 100%;
+}

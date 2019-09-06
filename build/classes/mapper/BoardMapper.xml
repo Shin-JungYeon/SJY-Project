@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- /project1/src/mapper/BoardMapper.xml -->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.BoardMapper">
+	<select id="select" parameterType="map" resultType="Board">
+		select * from board
+		<if test="num != null">
+			where num = #{num}
+		</if>
+		<if test="id != null">
+			where id = #{id}
+		</if>
+		<if test="bclass != null">
+			where bclass = #{bclass}
+		</if>
+		<if test="column != null and find != null">
+			<choose>
+				<when test="column == 'subcon'">
+					where subject like '%${find}%' or content like '%${find}%'
+				</when>
+				<otherwise>
+					where ${column} like '%${find}%'
+				</otherwise>
+			</choose>
+		</if>
+		<if test="start != null">
+			order by ref desc, refstep asc limit #{start},#{limit}
+		</if>  <!-- 순서 중요. -->
+	</select>
+	
+	<select id="reviewselect" parameterType="map" resultType="Board">
+		select * from Board
+		<if test="bclass != null">
+			where bclass = #{bclass}
+		</if>
+		<if test="top != null">
+			order by readcnt desc
+		</if>
+	</select>
+	
+	<select id="infoselect" parameterType="map" resultType="Board">
+		select * from Board
+		<if test="bclass != null">
+			where bclass = #{bclass}
+		</if>
+		<if test="top != null">
+			order by readcnt desc
+		</if>
+	</select>
+	
+	<select id="count" parameterType="map" resultType="int">
+		select count(*) from board  <!-- 두 파라미터에 null 이 들어오면 where 없어서 그냥 전체에 대한 count 리턴. -->
+		<if test="column != null and find != null">
+			<choose>
+				<when test="column == 'subcon'">
+					where subject like '%${find}%' or content like '%${find}%'
+				</when>
+				<otherwise>
+					where ${column} like '%${find}%'
+				</otherwise>
+			</choose>
+		</if>
+		<if test="bclass != null">
+			where bclass = #{bclass}
+		</if>
+		<if test="id != null">
+			where id = #{id}
+		</if><!-- 
+		<if test="likeid != null and likenum != null">
+			where likeid = #{likeid} and likenum = #{likenum}
+		</if> -->
+	</select>
+</mapper>

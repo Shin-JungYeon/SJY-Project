@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- /project1/src/mapper/RequestMapper.xml -->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.RequestMapper">
+	<select id="select" parameterType="map" resultType="Request">
+		select * from request
+		<if test="no != null">
+			where no = #{no}
+		</if>
+	</select>
+</mapper>

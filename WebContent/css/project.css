@@ -1,0 +1,32 @@
+/* WebContent/css/project.css */
+div {
+	display: block;
+	margin: 10px;
+}
+span {
+	margin: 35px;
+}
+.board_title > .t_no {
+	width: 15px;
+}
+.board_title > span {
+	margin: 50px;
+}
+table {
+  border-collapse: collapse;
+  width: 70%;
+}
+.css > tr > th, td {
+  padding: 3px 10px 3px 10px;
+  text-align: center;
+  border-bottom: 1px solid #a2a2a2;
+}
+a {
+	text-decoration: none;
+}
+input[type=text], input[type=password] {
+	width: 385px;
+}
+textarea {
+	width: 385px;
+}

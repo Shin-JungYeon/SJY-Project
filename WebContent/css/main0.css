@@ -1,0 +1,26 @@
+/* WebContent/css/main.css */
+table {
+	width: 100%;
+	border-style: none;
+}
+th, td {
+	font-family: "Karma", sans-serif;
+	border: 3px solid #bcbcbc;
+	text-align: center;
+	padding: 8px;
+}
+th {
+	background-color: #ffffff;
+	color: white;
+}
+td {
+	background-color: #ffffff;
+}
+caption {
+	color: #111111;
+	font-size: 20px;
+	background-color: #ffffff;
+}
+input[type=text], input[type=password], textarea {
+	width: 100%;
+}

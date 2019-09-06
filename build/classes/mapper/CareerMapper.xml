@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- /project1/src/mapper/CareerMapper.xml -->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.CareerMapper">
+	<select id="select" parameterType="map" resultType="Career">
+		select * from career
+		<where>
+			<if test="id != null">
+				and id = binary #{id}
+			</if>
+			<if test="column != null and find != null">  <!-- 둘 중 하나라도 값이 null이면 전체 목록 출력. -->
+				and ${column} like binary '%${find}%'
+			</if>
+		</where>
+	</select>
+</mapper>

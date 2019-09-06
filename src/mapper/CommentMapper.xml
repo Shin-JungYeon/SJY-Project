@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- /project1/src/mapper/CommentMapper.xml -->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.CommentMapper">
+	<select id="select" parameterType="map" resultType="Comment">
+		select * from comment
+		<where>
+			<if test="id != null">
+				and id = binary #{id}
+			</if>
+		</where>
+	</select>
+</mapper>
