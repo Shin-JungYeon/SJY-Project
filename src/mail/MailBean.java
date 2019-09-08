@@ -31,8 +31,8 @@ public class MailBean {
 	// 생성자
 	public MailBean() {
 		// 인증에 사용할 기본값 설정
-		sender = "ssjy41@naver.com";
-		passwd = "tlswjddus1104!!";
+		sender = "";
+		passwd = "";
 		recipient = "수신 이메일 주소";
 		title = "전송할 제목";
 		contents = "전송할 내용";
