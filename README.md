@@ -8,6 +8,7 @@
   1. 연극 리뷰
   2. 배우들과 팬들의 의사소통 커뮤니티
 - 작업 내용
-  1. SpringBoot 적용
-  2. WEB / API 분리
+  1. WEB / API 분리
+  2. WEB - react 적용
+  3. API - String boot 적용
 
